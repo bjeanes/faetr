@@ -154,154 +154,155 @@ describe Range do
         end
       end
       
-      describe "on Date" do
-        describe "inclusive" do
-          subject do
-            (Date.new(2009, 1, 1)..Date.new(2009, 1, 10))
-          end
+    end
+    
+    describe "on Date" do
+      describe "inclusive" do
+        subject do
+          (Date.new(2009, 1, 1)..Date.new(2009, 1, 10))
+        end
 
-          it "return a random Date within the range" do
-            RANDOM_TEST_COUNT.times do
-              subject.should include(subject.rand)
-            end
-          end
-
-          it "include the start Date" do
-            f = false
-            RANDOM_TEST_COUNT.times do
-              if subject.rand == subject.first
-                f = true
-                break
-              end
-            end
-
-            f.should == true
-          end
-
-          it "include the end Date" do
-            f = false
-            RANDOM_TEST_COUNT.times do
-              if subject.rand == subject.last
-                f = true
-                break
-              end
-            end
-
-            f.should == true
+        it "return a random Date within the range" do
+          RANDOM_TEST_COUNT.times do
+            subject.should include(subject.rand)
           end
         end
 
-        describe "exclusive" do
-          subject do
-            (Date.new(2009, 1, 1)...Date.new(2009, 1, 30))
-          end
-
-          it "return a random number within the range" do
-            RANDOM_TEST_COUNT.times do
-              subject.should include(subject.rand)
+        it "include the start Date" do
+          f = false
+          RANDOM_TEST_COUNT.times do
+            if subject.rand == subject.first
+              f = true
+              break
             end
           end
 
-          it "include the start Date" do
-            f = false
-            RANDOM_TEST_COUNT.times do
-              if subject.rand == subject.first
-                f = true
-                break
-              end
-            end
+          f.should == true
+        end
 
-            f.should == true
+        it "include the end Date" do
+          f = false
+          RANDOM_TEST_COUNT.times do
+            if subject.rand == subject.last
+              f = true
+              break
+            end
           end
 
-          it "doesn't include the end Date" do
-            f = false
-            RANDOM_TEST_COUNT.times do
-              if subject.rand == subject.last
-                f = true
-                break
-              end
-            end
+          f.should == true
+        end
+      end
 
-            f.should_not == true
+      describe "exclusive" do
+        subject do
+          (Date.new(2009, 1, 1)...Date.new(2009, 1, 30))
+        end
+
+        it "return a random number within the range" do
+          RANDOM_TEST_COUNT.times do
+            subject.should include(subject.rand)
           end
+        end
+
+        it "include the start Date" do
+          f = false
+          RANDOM_TEST_COUNT.times do
+            if subject.rand == subject.first
+              f = true
+              break
+            end
+          end
+
+          f.should == true
+        end
+
+        it "doesn't include the end Date" do
+          f = false
+          RANDOM_TEST_COUNT.times do
+            if subject.rand == subject.last
+              f = true
+              break
+            end
+          end
+
+          f.should_not == true
+        end
+      end
+    end
+    
+    describe "on Time" do
+      describe "inclusive" do
+        subject do
+          (Time.local(2009, 1, 1, 0, 0, 0)..Time.local(2009, 1, 1, 0, 2, 0))
+        end
+
+        it "return a random Date within the range" do
+          (RANDOM_TEST_COUNT * 5).times do
+            subject.should include(subject.rand)
+          end
+        end
+
+        it "include the start Time" do
+          f = false
+          (RANDOM_TEST_COUNT * 5).times do
+            if subject.rand == subject.first
+              f = true
+              break
+            end
+          end
+
+          f.should == true
+        end
+
+        it "include the end Time" do
+          f = false
+          (RANDOM_TEST_COUNT * 5).times do
+            if subject.rand == subject.last
+              f = true
+              break
+            end
+          end
+
+          f.should == true
+        end
+      end
+
+      describe "exclusive" do
+        subject do
+          (Time.local(2009, 1, 1, 0, 0, 0)...Time.local(2009, 1, 1, 0, 2, 0))
+        end
+
+        it "return a random Date within the range" do
+          (RANDOM_TEST_COUNT * 5).times do
+            subject.should include(subject.rand)
+          end
+        end
+
+        it "include the start Time" do
+          f = false
+          (RANDOM_TEST_COUNT * 5).times do
+            if subject.rand == subject.first
+              f = true
+              break
+            end
+          end
+
+          f.should == true
+        end
+
+        it "doesn't include the end Time" do
+          f = false
+          (RANDOM_TEST_COUNT * 5).times do
+            if subject.rand == subject.last
+              f = true
+              break
+            end
+          end
+
+          f.should == false
         end
       end
       
-      describe "on Time" do
-        describe "inclusive" do
-          subject do
-            (Time.local(2009, 1, 1, 0, 0, 0)..Time.local(2009, 1, 1, 0, 2, 0))
-          end
-
-          it "return a random Date within the range" do
-            (RANDOM_TEST_COUNT * 5).times do
-              subject.should include(subject.rand)
-            end
-          end
-
-          it "include the start Time" do
-            f = false
-            (RANDOM_TEST_COUNT * 5).times do
-              if subject.rand == subject.first
-                f = true
-                break
-              end
-            end
-
-            f.should == true
-          end
-
-          it "include the end Time" do
-            f = false
-            (RANDOM_TEST_COUNT * 5).times do
-              if subject.rand == subject.last
-                f = true
-                break
-              end
-            end
-
-            f.should == true
-          end
-        end
-
-        describe "exclusive" do
-          subject do
-            (Time.local(2009, 1, 1, 0, 0, 0)...Time.local(2009, 1, 1, 0, 2, 0))
-          end
-
-          it "return a random Date within the range" do
-            (RANDOM_TEST_COUNT * 5).times do
-              subject.should include(subject.rand)
-            end
-          end
-
-          it "include the start Time" do
-            f = false
-            (RANDOM_TEST_COUNT * 5).times do
-              if subject.rand == subject.first
-                f = true
-                break
-              end
-            end
-
-            f.should == true
-          end
-
-          it "doesn't include the end Time" do
-            f = false
-            (RANDOM_TEST_COUNT * 5).times do
-              if subject.rand == subject.last
-                f = true
-                break
-              end
-            end
-
-            f.should == false
-          end
-        end
-        
-      end
     end
   end
 end
