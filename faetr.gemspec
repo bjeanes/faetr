@@ -23,12 +23,7 @@ Gem::Specification.new do |s|
      "README.rdoc",
      "Rakefile",
      "VERSION",
-     "faetr.rb",
-     "lib/array_ext.rb",
-     "lib/class_ext.rb",
-     "lib/range_ext.rb",
-     "lib/symbol_ext.rb",
-     "lib/warn_define.rb",
+     "faetr.gemspec",
      "spec/faetr_spec.rb",
      "spec/spec_helper.rb"
   ]
