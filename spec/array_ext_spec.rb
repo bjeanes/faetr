@@ -20,8 +20,8 @@ describe Array do
     it "should create a proc that calls the method named after the symbol on the caller" do
       array = [stub, stub, stub]
       array.each do|s|
-        s.should_receive(:foo)
-        s.should_receive(:bar)
+        s.should_receive(:foo).and_return(foo = stub)
+        foo.should_receive(:bar)
       end
       array.map(&[:foo, :bar])
     end
