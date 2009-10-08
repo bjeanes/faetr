@@ -3,9 +3,14 @@ require File.dirname(__FILE__) + '/../lib/faetr/array_ext'
 
 describe Array do
   describe "#rand" do
+    subject { [*(1..10000)] }
+    
+    it "returns a random array element" do
+      subject.should include(subject.rand)
+    end
+    
     it "should return a random value" do
-      array = [*(1..10000)]
-      array.rand.should_not == array.rand
+      subject.rand.should_not == subject.rand
     end
   end
   
@@ -24,6 +29,10 @@ describe Array do
         foo.should_receive(:bar)
       end
       array.map(&[:foo, :bar])
+    end
+    
+    it "enables Array#map(&[:list, :of, :symbols])" do
+      ['ID', 'NAME', 'EMAIL'].map(&[:downcase, :to_sym]).should == [:id, :name, :email]
     end
   end
 end
