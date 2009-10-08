@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{faetr}
-  s.version = "0.0.1"
+  s.version = "0.0.2"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Bodaniel Jeanes", "Jack Chen"]
@@ -24,6 +24,12 @@ Gem::Specification.new do |s|
      "Rakefile",
      "VERSION",
      "faetr.gemspec",
+     "lib/faetr.rb",
+     "lib/faetr/array_ext.rb",
+     "lib/faetr/class_ext.rb",
+     "lib/faetr/range_ext.rb",
+     "lib/faetr/symbol_ext.rb",
+     "lib/faetr/warn_define.rb",
      "spec/faetr_spec.rb",
      "spec/spec_helper.rb"
   ]
