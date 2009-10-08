@@ -1,3 +1,6 @@
+require 'date'
+require 'time'
+
 class Range
   # TODO: make this be a no-op for Time/Dates
   warn_define :rand do
