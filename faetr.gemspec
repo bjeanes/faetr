@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{faetr}
-  s.version = "0.0.3"
+  s.version = "0.0.4"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Bodaniel Jeanes", "Jack Chen"]
-  s.date = %q{2009-10-08}
+  s.date = %q{2009-10-13}
   s.description = %q{Collection of nice Ruby object extensions}
   s.email = %q{me@bjeanes.com}
   s.extra_rdoc_files = [
@@ -30,18 +30,24 @@ Gem::Specification.new do |s|
      "lib/faetr/range_ext.rb",
      "lib/faetr/symbol_ext.rb",
      "lib/faetr/warn_define.rb",
-     "spec/faetr_spec.rb",
-     "spec/spec_helper.rb"
+     "spec/array_ext_spec.rb",
+     "spec/range_ext_spec.rb",
+     "spec/spec_helper.rb",
+     "spec/symbol_ext_spec.rb",
+     "spec/warn_define_spec.rb"
   ]
   s.homepage = %q{http://github.com/bjeanes/faetr}
   s.rdoc_options = ["--charset=UTF-8"]
   s.require_paths = ["lib"]
   s.rubyforge_project = %q{faetr}
-  s.rubygems_version = %q{1.3.5}
+  s.rubygems_version = %q{1.3.4}
   s.summary = %q{Collection of nice Ruby object extensions}
   s.test_files = [
-    "spec/faetr_spec.rb",
-     "spec/spec_helper.rb"
+    "spec/array_ext_spec.rb",
+     "spec/range_ext_spec.rb",
+     "spec/spec_helper.rb",
+     "spec/symbol_ext_spec.rb",
+     "spec/warn_define_spec.rb"
   ]
 
   if s.respond_to? :specification_version then
